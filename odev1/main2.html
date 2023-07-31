@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <style>
+        body {}
+
+        nav {
+            position: absolute;
+            height: 83px;
+            background-color: rgba(108, 100, 100, 0);
+            padding-left: 15%;
+            padding-right: 15%;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            width: 75%;
+
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            color: white;
+            list-style-type: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-left: 20px;
+
+        }
+
+
+
+        header {
+
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.103);
+            background-image: url(img/home-bg.jpg);
+            background-repeat: round;
+
+
+        }
+
+        .postsdiv {
+
+            /*  background-color: rgb(248, 244, 245); */
+            justify-content: center !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+
+        .titlebox {
+            width: 38%;
+            justify-content: center;
+            color: black;
+            font-size: large;
+            box-sizing: border-box;
+
+        }
+
+        .titlebox a {
+
+            color: black;
+
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .titlebox a:hover {
+            color: #0085a1;
+        }
+
+        .myabtn {
+            background-color: #0085a1;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            font-weight: 700;
+            float: right;
+
+        }
+
+        #olderpostbtndiv {
+            width: 38%;
+            box-sizing: border-box;
+
+
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+
+
+
+
+        }
+
+        .icon {
+            margin-left: 1.8rem;
+
+            font-size: 3rem;
+            color: black;
+
+
+        }
+
+        .deneme {
+            display: flex;
+        }
+
+        .deneme2 {
+            display: flex;
+            justify-content: center;
+            margin-top: -1.5rem;
+            font-size: large;
+
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.625rem;
+        }
+
+        .post-subtitle {
+            font-weight: 300;
+            margin-bottom: 0.625rem;
+            font-size: 1.75rem;
+            margin-top: 0;
+        }
+
+        .post-meta {
+            font-size: 1.125rem;
+            margin-top: 0;
+            font-style: italic;
+            color: #6c757d;
+        }
+        .main-title {
+            font-size: 3rem;
+            color:white;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        .main-title h1 {
+            margin-bottom: -1.5rem;
+            margin-top: 0;
+        }
+        .little-title {
+            font-size: 1.5rem;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <h1>Start Bootstrap</h1>
+        <ul>
+            <li><a href="main2.html"> home</a></li>
+            <li><a href="about.html"> about</a></li>
+            <li><a href="sampleposts.html"> sample post</a></li>
+            <li><a href="contact.html"> Contact</a></li>
+
+        </ul>
+
+    </nav>
+    <header>
+
+        <div class="main-title">
+            <h1>Clean blog</h1>
+
+            <span class="little-title">A Blog Theme by Start Bootstrap</span>
+
+        </div>
+
+    </header>
+
+    <div class="postsdiv">
+
+
+
+        <div class="titlebox">
+            <a>
+                <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
+                <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+            </a>
+            <p class="post-meta">
+                Posted by
+                <a href="">Start Bootstrap </a>
+                on September 24, 2023
+            </p>
+        </div>
+        <hr>
+
+
+        <div class="titlebox">
+            <a>
+                <h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste
+                    any of mine.</h2>
+            </a>
+            <p class="post-meta">
+                Posted by
+                <a href="">Start Bootstrap </a>
+                on September 18, 2023
+            </p>
+        </div>
+        <hr>
+
+        <div class="titlebox">
+            <a>
+                <h2 class="post-title">Science has not yet mastered prophecy</h2>
+                <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.
+                </h3>
+            </a>
+            <p class="post-meta">
+                Posted by
+                <a href="">Start Bootstrap </a>
+                on September 24, 2023
+            </p>
+        </div>
+        <hr>
+
+        <div id="olderpostbtndiv">
+            <a class="myabtn" href="#"> Older Posts -></a>
+
+        </div>
+        <hr>
+
+    </div>
+
+
+    <footer>
+        <ul class="deneme">
+            <li>
+                <a class="icon" href="">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+
+            <li>
+                <a class="icon" href="">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </li>
+            <li>
+                <a class="icon" href="">
+                    <i class="fab fa-github-square"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="deneme2">
+            <p>Copyright © Your Website 2023</p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
