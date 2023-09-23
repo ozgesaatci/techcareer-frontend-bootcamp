@@ -1,8 +1,22 @@
 
-let detailsId = document.URL.split("=")[1]
-console.log(detailsId)
-console.log(document)
 
+/**
+ * url adrsinden id degerini split ozelligini kullanarak alinmasini saglayan kod
+ * 
+ * ornek olarak: http:localhost:8080/details.html?id=23
+ * urlsinin '=' ile parcalayarak olusan dizinin 1. elemanini alarak 23 degerine
+ * erisebiliriz
+ */
+let detailsId = document.URL.split("=")[1]
+
+
+/**
+ * 
+ * Bir etkinligin detayinin listelenmesi icin api'den alinan degerin 
+ * buradaki fonksiyona parametre olarak verilmesi ile deger icindeki bilgilerin
+ * html yapisina gomulerek hmtl dosyasinda berlirtilen id'li yere aktarilmasi saglanir
+ * 
+ */
 function createHTML(data) {
     let main = document.getElementById("ekle")
     let div = document.createElement("div")
@@ -36,8 +50,11 @@ function createHTML(data) {
     main.appendChild(div)
 }
 
-
-
+/**
+     * api icin bir ajax ile 'get' isteginde bulundugumuz fonksiyon
+     * burada kullanilan 'Promise' yontemi apiden gelen istegi gelene kadar 
+     * bekler degeri sonra dondurur.
+     */
 function getAllData(id) {
     return new Promise(resolve => {
         $.get(
@@ -52,6 +69,12 @@ function getAllData(id) {
     })
 }
 
+
+/**
+ * Sayfa acildiginda calisan calisan fonskiyon zinciri
+ * veri cekilir cekilen veri promise bir parcasi ilan then ile yakalanir
+ * ve deger div olusturuyaca(createHTML) ye gonderilir.
+ */
 let etkinlik;
 getAllData(detailsId)
     .then(x => {
@@ -62,23 +85,5 @@ getAllData(detailsId)
     })
 
 
-function createTempleate(data) {
-    let container = document.getElementById("hadi");
-    document.body.style.backgroundImage = `url('${data.KucukAfis}')`;
-}
-
-console.log(Date.parse("2023-08-16T09:30:00").toLocaleString())
-
-
-
-$.get(
-    "http://localhost:8080/v1/advert/1",
-    {},
-    (data) => {
-        console.log(data)
-        console.log(data.allOffers)
-        console.log(JSON.parse( data.allOffers[3].productsList))
-    }
-)
 
 

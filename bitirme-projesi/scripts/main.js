@@ -1,6 +1,12 @@
 let tumEtkinlikler = []
 let seciliEtkinlikArray = []
 
+
+    /**
+     * api'den gelen degerleri listelemek icin hmtl yapisini icermektedir.
+     * api ile gelen dizideki her bir elamani dataya parametre vererek 
+     * etkinligin olusuturlmasi saglanir.
+     */
     function createCardTepmlate(data){
 
         let div = document.createElement("div")
@@ -21,6 +27,12 @@ let seciliEtkinlikArray = []
         return div;
     }
 
+
+    /**
+     * api icin bir ajax ile 'get' isteginde bulundugumuz fonksiyon
+     * burada kullanilan 'Promise' yontemi apiden gelen istegi gelene kadar 
+     * bekler degeri sonra dondurur.
+     */
     function getAllData(){
         return new Promise(resolve => {
             $.get(
@@ -33,6 +45,11 @@ let seciliEtkinlikArray = []
 
 
 
+    /**
+     * createCardTepmlate fonksiyonunu kullaranarak 
+     * sayfa icerisinde belirttigimiz id'yi iceren divin icinde
+     * tum etkinlikleri yerlestiriz
+     */
     function listEtkinlik(data){
         let sayfa =  document.getElementById("add-etkinlik");
         sayfa.innerHTML = ""
@@ -41,6 +58,12 @@ let seciliEtkinlikArray = []
         });
     }
 
+
+    /**
+     * Sayfa acildiginda acilan fonskiyon budur.
+     * Bu fonksiyon sayeside apiden degerler cekilir ve global bir degisken
+     * olan tumEtkinlikler diziisne atilir.
+     */
     getAllData()
         .then(veriler => {
             tumEtkinlikler = veriler;
@@ -50,6 +73,11 @@ let seciliEtkinlikArray = []
 
 
 
+    /**
+     * Etkinlikler icersinde kategoriye gore filtreleme yapmak icin kullanilan yontem
+     * 'select' elementinn event izlenir eger bir secenek degistirilirse 
+     * 'selectEtkinlik fonksiyonu kullanilir.
+     */
     document.getElementById("cate-select").addEventListener("change", e => {
         console.log("etkinlik degisti ")
         let secim = e.target.value;
@@ -57,6 +85,12 @@ let seciliEtkinlikArray = []
         selectEtlinlik(secim)
     })
 
+
+    /**
+     * TumEtkinlikler dizisinden secilen etkinligin turudeki eslesmeye
+     * bakkilir eslesen deger seciliEtkinlikArray dizisine aktarillir.
+     * ve bu dizi 'listEtkinlik' fonksiyonu verilierek degerleri terkar anasayfaya yazdirir.
+     */
     function selectEtlinlik(val){
         seciliEtkinlikArray = []
         let val1 = val.toUpperCase()
@@ -69,6 +103,13 @@ let seciliEtkinlikArray = []
 
 
 
+    /**
+     * 
+     * Arama cubuguna girilen degerin yakalanip 
+     * TumEkinlikler dizisinde eslesen etklinlik adi, regex ve String macth ozelligi yardimiyla
+     * yapilarak eslesene degerlei tekrardan ana sayfada yazdirilmasi saglanir.
+     * 
+     */
     function searchEtlinlik(){
         let value = document.querySelector("#etkin-ara").value
         seciliEtkinlikArray = []

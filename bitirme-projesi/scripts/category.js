@@ -1,8 +1,14 @@
 let tumEtkinlikler = []
 let seciliEtkinlikArray = []
 let documentTitle = matchCategory( document.title)
-console.log(documentTitle)
 
+/**
+ * Sayfa adini <title> degerinden yakalayip ve buradaki degere 
+ * gore anasayfada kullanilan yontemindeki gibi sadece turu yakaladiigmiz deger ile
+ * eslesen etkinlikleri listelemek icin kurgulanmistir.
+ * 
+ * Bu js dosyasinda kullanilan diger fonskiyonlar main.js de mevcuttur.
+ */
 function matchCategory(title) {
     switch (title) {
         case "Tiyatro":
